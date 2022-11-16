@@ -3,7 +3,7 @@
   <div class="flex flex-row flex-wrap align-items-center mt-3">
     <div class="col-12 md:col-6 flex flex-column">
       <label for="amount">Amount</label>
-      <p-inputNumber [formControl]="amountController" id="amount" inputId="integeronly"></p-inputNumber>
+      <p-inputNumber [formControl]="amountController" [min]="0" id="amount" inputId="integeronly"></p-inputNumber>
       <span [ngClass]="amountController.errors && amountController.touched ? 'visible' : 'invisible'"
             class="error mt-1">The Amount is not valid</span>
     </div>
