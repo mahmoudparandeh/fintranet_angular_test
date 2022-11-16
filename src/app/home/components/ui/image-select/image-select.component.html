@@ -1,0 +1,18 @@
+<div class="flex flex-column">
+  <label class="flex flex-row align-items-center justify-content-center relative image-input p-3" for="file">
+    <button *ngIf="imageOption.imagePath !== ''" (click)="removeImage($event)" pButton pRipple type="button" icon="pi pi-times" class="absolute remove-button p-button-rounded p-button-danger"></button>
+    <input
+      type="file"
+      id="file"
+      class="hidden"
+      onclick="this.value = null"
+      (change)="preview($event)"
+      accept="image/*"
+    />
+    <img *ngIf="imageOption.imagePath === ''; else image" src="../../../../assets/images/add-image.png" />
+    <ng-template #image>
+      <img [src]="imageOption.imagePath" class="image" width="185" height="185" alt="preview" />
+    </ng-template>
+  </label>
+  <span class="error" *ngIf="this.validation">{{this.validation}}</span>
+</div>

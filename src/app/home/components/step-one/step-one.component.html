@@ -1,0 +1,5 @@
+<div class="d-flex flex-column step-container">
+  <h2 class="header">Please select your profile picture</h2>
+  <app-image-select [file]="image" [object]="this" [onImageSelected]="onImageSelected" [size]="size"></app-image-select>
+  <span class="sub-title mt-1">(The size of image should be less than {{size}}MB)</span>
+</div>

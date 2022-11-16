@@ -1,0 +1,22 @@
+<div class="container box flex flex-column justify-content-between p-3">
+  <div>
+    <h1 class="flex justify-content-center">Welcome to Fintranet Registration Form</h1>
+    <p-steps [(activeIndex)]="activeIndex" [model]="stepsItems"></p-steps>
+    <ng-container class="my-4 overflow-scroll" ngSwitch="{{ activeIndex }}">
+      <app-step-one *ngSwitchCase="0"></app-step-one>
+      <app-step-two *ngSwitchCase="1"></app-step-two>
+      <app-step-three *ngSwitchCase="2"></app-step-three>
+      <app-step-four *ngSwitchCase="3"></app-step-four>
+    </ng-container>
+  </div>
+  <div class="flex justify-content-center">
+    <button (click)="onPrevClicked()" *ngIf="activeIndex !== 0" class="p-button-raised" label="Prev" pButton pRipple
+            type="button"></button>
+    <button (click)="onNextClicked()" *ngIf="activeIndex !== 3" [disabled]="!shouldEnableNextButton"
+            class="p-button-raised mx-2" label="Next"
+            pButton pRipple type="button"></button>
+    <button (click)="onSubmit()" *ngIf="activeIndex === 3" class="p-button-raised mx-2" label="Submit"
+            pButton pRipple type="button"></button>
+  </div>
+</div>
+<p-toast></p-toast>

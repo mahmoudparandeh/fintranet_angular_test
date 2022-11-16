@@ -1,0 +1,31 @@
+<div class="flex flex-column step-container">
+  <h2 class="header">Please fill the information</h2>
+  <div class="flex flex-row flex-wrap align-items-center mt-3">
+    <div class="col-12 md:col-6 flex flex-column">
+      <label for="amount">Amount</label>
+      <p-inputNumber [formControl]="amountController" id="amount" inputId="integeronly"></p-inputNumber>
+      <span [ngClass]="amountController.errors && amountController.touched ? 'visible' : 'invisible'"
+            class="error mt-1">The Amount is not valid</span>
+    </div>
+    <div class="flex flex-column col-12 md:col-6">
+      <label for="date">Date</label>
+      <p-calendar [formControl]="dateController" [maxDate]="maxDate" [minDate]="minDate" [readonlyInput]="true"
+                  id="date" inputId="date"></p-calendar>
+      <span [ngClass]="dateController.errors && dateController.touched ? 'visible' : 'invisible'" class="error mt-1">You should choose a date</span>
+    </div>
+    <div class="col-12 md:col-6 flex flex-column">
+      <label for="status">Status</label>
+      <p-dropdown [formControl]="statusController" [options]="status" [showClear]="true" id="status" optionLabel="name"
+                  placeholder="Select a Status"></p-dropdown>
+      <span [ngClass]="statusController.errors && statusController.touched ? 'visible' : 'invisible'"
+            class="error mt-1">You should choose a status</span>
+    </div>
+    <div class="col-12 md:col-6 flex flex-column">
+      <label for="source">Source of fund</label>
+      <input (paste)="false" [formControl]="sourceOfFundController" autocomplete="new-source" class="col-12" id="source"
+             pInputText textOnly type="text">
+      <span [ngClass]="sourceOfFundController.errors && sourceOfFundController.touched ? 'visible' : 'invisible'"
+            class="error mt-1">You should fill source of fund</span>
+    </div>
+  </div>
+</div>

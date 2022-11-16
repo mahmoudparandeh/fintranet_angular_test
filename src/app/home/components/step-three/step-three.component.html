@@ -1,0 +1,15 @@
+<div class="flex flex-column step-container">
+  <h2 class="header">Please choose a person from list below:</h2>
+  <div class="bg-blue flex flex-row heading p-3">
+    <span class="col-1 bold"></span>
+    <span class="col-1 bold">ID</span>
+    <span class="col-3 bold">Full Name</span>
+    <span class="col-3 bold">Email</span>
+    <span class="col-2 bold">Age</span>
+    <span class="col-2 bold">Country</span>
+  </div>
+  <div class="my-3">
+    <app-person (click)="onSelectedPersonChanged(person.id)" *ngFor="let person of people" [person]="person"
+                [selectedPerson]="selectedPerson" class="pointer"></app-person>
+  </div>
+</div>

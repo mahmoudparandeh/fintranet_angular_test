@@ -1,0 +1,14 @@
+<div class="flex flex-row align-items-center p-2 person-container mb-2">
+  <div class="p-field-radiobutton col-1">
+    <p-radioButton [(ngModel)]="selectedPerson" [inputId]="person.id.toString()" [value]="person.id"
+                   name="person"></p-radioButton>
+  </div>
+  <span class="col-1">{{person.id}}</span>
+  <div class="col-3 flex flex-row align-items-center">
+    <img [alt]="person.fullName" [src]="person.image" class="image-container"/>
+    <span class="ml-2 person-name">{{person.fullName}}</span>
+  </div>
+  <span class="col-3">{{person.email}}</span>
+  <span class="col-2">{{person.age}}</span>
+  <span class="col-2">{{person.country}}</span>
+</div>

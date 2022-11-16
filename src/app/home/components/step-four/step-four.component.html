@@ -1,0 +1,47 @@
+<div class="d-flex flex-column step-container">
+  <h2 class="header">Summary of your submission:</h2>
+  <h4 class="sub-title">Your profile picture</h4>
+  <img [src]="imagePath" alt="profile" class="image-container">
+  <h4 class="mt-2 sub-title">Your form data</h4>
+  <div class="flex flex-row flex-wrap form-container p-2">
+    <div class="flex flex-row col-12 md:col-6">
+      <span class="label">Amount:</span>
+      <span class="text ml-1">{{data.amount! | number: '1.0-0'}}</span>
+    </div>
+    <div class="flex flex-row col-12 md:col-6">
+      <span class="label">Date:</span>
+      <span class="text ml-1">{{data.date!.toDateString()}}</span>
+    </div>
+    <div class="flex flex-row col-12 md:col-6">
+      <span class="label">Status:</span>
+      <span class="text ml-1">{{data.status!.name}}</span>
+    </div>
+    <div class="flex flex-row col-12 md:col-6">
+      <span class="label">Source of Fund:</span>
+      <span class="text ml-1">{{data.sourceOfFound}}</span>
+    </div>
+  </div>
+  <h4 class="mt-2 sub-title">Your selected person</h4>
+  <div class="flex flex-row flex-wrap align-items-center form-container p-2">
+    <img [alt]="data.selectedPerson!.fullName" [src]="data.selectedPerson!.image" class="profile-image-container">
+    <div class="flex flex-row flex-wrap">
+      <div class="flex flex-row col-12 md:col-6">
+        <span class="label">Fullname:</span>
+        <span class="text ml-1">{{data.selectedPerson!.fullName}}</span>
+      </div>
+      <div class="flex flex-row col-12 md:col-6">
+        <span class="label">Email:</span>
+        <span class="text ml-1">{{data.selectedPerson!.email}}</span>
+      </div>
+      <div class="flex flex-row col-12 md:col-6">
+        <span class="label">Age:</span>
+        <span class="text ml-1">{{data.selectedPerson!.age}}</span>
+      </div>
+      <div class="flex flex-row col-12 md:col-6">
+        <span class="label">Country:</span>
+        <span class="text ml-1">{{data.selectedPerson!.country}}</span>
+      </div>
+    </div>
+
+  </div>
+</div>
