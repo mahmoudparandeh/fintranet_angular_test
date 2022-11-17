@@ -11,7 +11,7 @@ import {Status} from './models/status.model';
 })
 export class StepTwoComponent implements OnInit {
   data!: Home;
-  amountController = new FormControl('', Validators.required);
+  amountController = new FormControl(0, Validators.required);
   dateController = new FormControl(new Date(), Validators.required);
   statusController = new FormControl({code: 0, name: ''}, Validators.required);
   sourceOfFundController = new FormControl('', Validators.required);
@@ -39,7 +39,7 @@ export class StepTwoComponent implements OnInit {
   constructor(private homeService: HomeService) {
     this.homeService.data.subscribe((data) => {
       this.data = data;
-      this.amountController.setValue(this.data.amount.toString(), {
+      this.amountController.setValue(this.data.amount, {
         emitEvent: false,
       });
       this.dateController.setValue(this.data.date, {
