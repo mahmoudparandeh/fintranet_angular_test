@@ -26,6 +26,10 @@
     <img [alt]="data.selectedPerson!.fullName" [src]="data.selectedPerson!.image" class="profile-image-container">
     <div class="flex flex-row flex-wrap">
       <div class="flex flex-row col-12 md:col-6">
+        <span class="label">ID:</span>
+        <span class="text ml-1">{{data.selectedPerson!.id}}</span>
+      </div>
+      <div class="flex flex-row col-12 md:col-6">
         <span class="label">Fullname:</span>
         <span class="text ml-1">{{data.selectedPerson!.fullName}}</span>
       </div>
