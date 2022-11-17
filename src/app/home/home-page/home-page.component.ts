@@ -67,7 +67,7 @@ export class HomePageComponent implements OnInit {
         return data.image !== null;
       }
       case 1: {
-        return data.amount! >= 0 && data.status !== null && data.date!.toDateString().length > 0 && data.sourceOfFound.length > 0;
+        return data.amount! > 0 && data.status !== null && data.date!.toDateString().length > 0 && data.sourceOfFound.length > 0;
       }
       case 2: {
         return data.selectedPerson !== null
