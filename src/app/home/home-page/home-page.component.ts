@@ -77,7 +77,6 @@ export class HomePageComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('here');
     this.messageService.add({severity: 'success', summary: 'Success', detail: 'Your registration is complete'});
   }
 }

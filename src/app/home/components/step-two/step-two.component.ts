@@ -61,12 +61,10 @@ export class StepTwoComponent implements OnInit {
       this.homeService.data.next(this.data);
     });
     this.dateController.valueChanges.subscribe((date) => {
-      console.log(date, typeof date);
       this.data.date = (date as Date);
       this.homeService.data.next(this.data);
     });
     this.statusController.valueChanges.subscribe((status) => {
-      console.log(status, typeof status);
       this.data.status = status!;
       this.homeService.data.next(this.data);
     });

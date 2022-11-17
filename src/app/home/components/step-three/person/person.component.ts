@@ -14,8 +14,6 @@ export class PersonComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.selectedPerson);
-    console.log(this.person);
   }
 
 }
